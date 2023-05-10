@@ -84,7 +84,7 @@ public class ReplayAPI {
 				
 				@Override
 				public void accept(Replay replay) {
-					replay.play(watcher);
+					replay.play(watcher, null);
 					
 				}
 			});
@@ -97,7 +97,7 @@ public class ReplayAPI {
 			if (replayer != null) {
 				int duration = replayer.getReplay().getData().getDuration() / 20;
 				if (second > 0 && second <= duration) {
-					replayer.getUtils().jumpTo(second);
+					replayer.getUtils().jumpTo(second, null);
 				}
 			}
 		}

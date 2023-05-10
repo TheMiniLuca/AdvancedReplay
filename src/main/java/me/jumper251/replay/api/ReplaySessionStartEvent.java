@@ -10,14 +10,14 @@ import org.bukkit.event.HandlerList;
 public class ReplaySessionStartEvent extends Event {
     private static final HandlerList HANDLERS = new HandlerList();
 
-    private ReplaySession session;
+    private final ReplaySession session;
 
-    private Player player;
+    private final Player player;
 
-    public ReplaySessionStartEvent(ReplaySession replay, Player player) {
+    public ReplaySessionStartEvent(ReplaySession session, Player player) {
         super(!Bukkit.isPrimaryThread());
 
-        this.session = replay;
+        this.session = session;
         this.player = player;
     }
 

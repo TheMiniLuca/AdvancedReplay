@@ -41,7 +41,7 @@ public class ReplayPlayCommand extends SubCommand {
 					@Override
 					public void accept(Replay replay) {
 						p.sendMessage(ReplaySystem.PREFIX + "Replay loaded. Duration §e" + (replay.getData().getDuration() / 20) + "§7 seconds.");
-						replay.play(p);
+						replay.play(p, null);
 					}
 				});
 

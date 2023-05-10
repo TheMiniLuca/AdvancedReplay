@@ -11,17 +11,23 @@ public class ReplaySessionRunningEvent extends Event {
 
     private static final HandlerList HANDLERS = new HandlerList();
 
-    private Replayer replayer;
+    private final Replayer replayer;
 
-    private Player player;
-    private int duration;
+    private final Player player;
+    private final int duration;
+    private final boolean paused;
 
-    public ReplaySessionRunningEvent(Replayer replayer, Player player, int duration) {
+    public ReplaySessionRunningEvent(Replayer replayer, Player player, int duration, boolean paused) {
         super(!Bukkit.isPrimaryThread());
 
         this.replayer = replayer;
         this.player = player;
         this.duration = duration;
+        this.paused = paused;
+    }
+
+    public boolean isPaused() {
+        return paused;
     }
 
     public int getDuration() {
