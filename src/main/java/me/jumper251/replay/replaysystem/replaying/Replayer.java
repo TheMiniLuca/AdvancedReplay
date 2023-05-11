@@ -84,6 +84,10 @@ public class Replayer {
 		return location;
 	}
 
+	public int getRunTime() {
+		return runTime;
+	}
+
 	public void start(String world) {
 		ReplayData data = this.replay.getData();
 		int duration = data.getDuration();

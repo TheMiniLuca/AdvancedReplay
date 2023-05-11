@@ -19,7 +19,6 @@ public class ReplaySessionRunningEvent extends Event {
 
     public ReplaySessionRunningEvent(Replayer replayer, Player player, int duration, boolean paused) {
         super(!Bukkit.isPrimaryThread());
-
         this.replayer = replayer;
         this.player = player;
         this.duration = duration;

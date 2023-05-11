@@ -11,13 +11,12 @@ public class ReplaySessionFinishEvent extends Event {
 
     private static final HandlerList HANDLERS = new HandlerList();
 
-    private Replay replay;
+    private final Replay replay;
     
-    private Player player;
+    private final Player player;
     
     public ReplaySessionFinishEvent(Replay replay, Player player) {
-    	super(!Bukkit.isPrimaryThread());
-    	
+		super(!Bukkit.isPrimaryThread());
     	this.replay = replay;
     	this.player = player;
     }

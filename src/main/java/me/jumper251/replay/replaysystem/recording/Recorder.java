@@ -170,7 +170,7 @@ public class Recorder {
 	public void createSpawnAction(Player player, Location loc, boolean first) {
 		SignatureData[] signArr = new SignatureData[1];
 		
-		if (!Bukkit.getOnlineMode() && ConfigManager.USE_OFFLINE_SKINS) {
+		if (ConfigManager.USE_OFFLINE_SKINS) {
 			new BukkitRunnable() {
 				
 				@Override
@@ -200,7 +200,7 @@ public class Recorder {
 			}
 		}
 		
-		if (!ConfigManager.USE_OFFLINE_SKINS || Bukkit.getOnlineMode()) {
+		if (!ConfigManager.USE_OFFLINE_SKINS ) {
 			ActionData spawnData = new ActionData(0, ActionType.SPAWN, player.getName(), new SpawnData(player.getUniqueId(), LocationData.fromLocation(loc), signArr[0]));
 			addData(currentTick, spawnData);
 		
